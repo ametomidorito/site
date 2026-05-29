@@ -259,7 +259,7 @@ img {
 .vertical-copy {
   position: absolute;
   z-index: 2;
-  left: 6vw;
+  left: 2vw;
   bottom: 14vh;
   margin: 0;
   writing-mode: vertical-rl;
@@ -700,6 +700,23 @@ img {
   transform: translateX(4px);
 }
 
+.privacy-policy-row {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.privacy-policy-row label {
+  font-weight: normal;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.contact-form .privacy-policy-row input{
+  width: auto;
+}
+
 .contact-deco {
   position: absolute;
   left:20px;
@@ -715,6 +732,62 @@ img {
   text-align: center;
   max-width: 700px;
   margin: 20px auto 0;
+}
+
+/* dialog自体のスタイル */
+.policy-modal {
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* 背景（擬似要素） */
+.policy-modal::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.policy-modal__inner {
+  padding: 25px;
+}
+
+.policy-modal h3 {
+  margin-top: 0;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.policy-modal__content {
+  max-height: 300px;
+  overflow-y: auto; /* 長い場合はスクロール */
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.policy-modal h4 {
+  font-size: 1rem;
+  margin: 15px 0 5px;
+  color: #333;
+}
+
+.policy-modal__close {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.policy-modal__close:hover {
+  background: #ddd;
 }
 
 .site-footer {
@@ -750,6 +823,68 @@ img {
   letter-spacing: .12em;
   color: #555
 }
+.news__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.news__card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 34% 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 48px 56px;
+  border: 1px solid rgba(34, 34, 34, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  margin-top: 28px;
+}
+
+.news__meta {
+  padding-right: 42px;
+  border-right: 1px solid rgba(34, 34, 34, 0.16);
+}
+
+.news__meta time {
+  display: inline-block;
+  margin-right: 18px;
+  color: #7fb0dc;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.news__meta span {
+  display: inline-block;
+  padding: 7px 18px;
+  border-radius: 999px;
+  background: #c8ddb8;
+  color: var(--text);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.news__body h3 {
+  margin: 0 0 22px;
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.news__body p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 2.1;
+  letter-spacing: 0.08em;
+}
+
+.news__body p + p {
+  margin-top: 10px;
+}
+
 
 .spOnly{
   display: none;
@@ -793,7 +928,7 @@ img {
     object-position: 30%;
   }
   .company{
-          grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
         gap: 28px;
   }
 
@@ -823,6 +958,30 @@ img {
       justify-content: center;
       flex-wrap: wrap;
     }
+ .news {
+    padding: 64px 6vw;
+  }
+
+  .news__heading {
+    display: block;
+  }
+
+  .news__ja {
+    margin-top: 12px;
+  }
+
+  .news__card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 36px 28px;
+  }
+
+  .news__meta {
+    padding-right: 0;
+    padding-bottom: 24px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(34, 34, 34, 0.16);
+  }
 }
 
 @media (max-width:760px) {
@@ -1014,6 +1173,25 @@ img {
     gap: 18px;
     flex-wrap: wrap;
     justify-content: center
+  }
+
+ .news__title {
+    font-size: 28px;
+  }
+
+  .news__meta time {
+    display: block;
+    margin: 0 0 12px;
+  }
+
+  .news__body h3 {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .news__body p {
+    font-size: 14px;
+    line-height: 2;
   }
 .spOnly{
   display:block;
