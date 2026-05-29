@@ -97,6 +97,29 @@
     </div>
   </section>
 
+
+  <section class="section news" id="news" aria-labelledby="news-title">
+      <div class="section-title">
+        <h2 id="news-title">NEWS</h2>
+        <p>お知らせ</p>
+      </div>
+    <article class="news__card">
+      <div class="news__meta">
+        <time datetime="2023-11-07">2023.11.07</time>
+        <span>お知らせ</span>
+      </div>
+      <div class="news__body">
+        <h3>雨と緑と株式会社を設立いたしました。</h3>
+        <p>
+          このたび、雨と緑と株式会社を設立いたしました。<br>
+          映像・動画コンテンツの企画制作、情報通信システムの導入支援、広告・広報に関する企画制作などを通じて、事業の成長を支援してまいります。
+        </p>
+        <p>今後とも何卒よろしくお願い申し上げます。</p>
+      </div>
+    </article>
+  </div>
+</section>
+
   <section class="section company" id="company" aria-labelledby="company-title">
     <div class="section-title">
       <h2 id="company-title">COMPANY</h2>
@@ -143,6 +166,39 @@
           <label for="message">お問い合わせ内容</label>
           <textarea id="message" name="entry.1132377842" required="required"></textarea>
         </div>
+
+      <div class="privacy-policy-row">
+        <label>
+          <input type="checkbox" id="privacy-check" required> 
+          <button type="button" id="open-policy" style="background:none; border:none; color:#4A90E2; text-decoration:underline; cursor:pointer; padding:0; font-size:inherit;">プライバシーポリシー</button>に同意する
+        </label>
+      </div>
+
+      <dialog id="policy-dialog" class="policy-modal">
+        <div class="policy-modal__inner">
+          <h3>プライバシーポリシー</h3>
+          <div class="policy-modal__content">
+            <p>当方は、本ウェブサイトの提供するサービスにおける、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシーを定めます。</p>
+            
+            <h4>1. 個人情報の管理</h4>
+            <p>お問い合わせいただいた際にお預かりした個人名、メールアドレスなどの個人情報は、適切に管理し、不正アクセス・紛失・漏洩等の防止に努めます。</p>
+            
+            <h4>2. 利用目的</h4>
+            <p>お預かりした個人情報は、以下の目的のみに利用いたします。<br>
+            ・お問い合わせに対する回答や、必要な情報をメール等でご連絡するため</p>
+            
+            <h4>3. 第三者への開示・提供の禁止</h4>
+            <p>当方は、次に掲げる場合を除いて、あらかじめユーザーの同意を得ることなく、第三者に個人情報を提供することはありません。<br>
+            ・法令に基づき開示が必要な場合<br>
+            ・本人の同意がある場合</p>
+            
+            <h4>4. Googleフォームの利用</h4>
+            <p>本フォームは、データ収集のためにGoogleフォームを利用しています。入力されたデータはGoogleのサーバーに送信されます。Googleのプライバシーポリシーについては、同社の公式サイトをご確認ください。</p>
+          </div>
+          <button type="button" id="close-policy" class="policy-modal__close">閉じる</button>
+        </div>
+      </dialog>
+
         <button type="submit" class="contact-form__submit">
           送信する
           <span>→</span>
