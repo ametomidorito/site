@@ -587,7 +587,7 @@ img {
   content: "";
   position: absolute;
   right: 0;
-  bottom: -40px;
+  bottom: 0;
   width: 197px;
   height: 466px;
   background: url("company-illust.jpg") right/contain no-repeat;
