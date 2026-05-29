@@ -23,6 +23,28 @@
   window.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 })();
 
+(() => {
+const dialog = document.getElementById('policy-dialog');
+const openBtn = document.getElementById('open-policy');
+const closeBtn = document.getElementById('close-policy');
+
+// 開くボタン
+openBtn.addEventListener('click', () => {
+  dialog.showModal(); // 背景クリック不可のモーダルとして開く
+});
+
+// 閉じるボタン
+closeBtn.addEventListener('click', () => {
+  dialog.close();
+});
+
+// 背景クリックでも閉じるようにしたい場合
+dialog.addEventListener('click', (e) => {
+  if (e.target === dialog) {
+    dialog.close();
+  }
+});
+})();
 
 document.getElementById('mG61Hd').addEventListener('submit', function(event) {
   let isValid = true;
